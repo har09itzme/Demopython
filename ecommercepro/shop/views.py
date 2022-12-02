@@ -17,6 +17,7 @@ def allProdCat(request, c_slug=None):
     else:
         products_list = Product.objects.all().filter(available=True)
     paginator = Paginator(products_list, 6)
+
     try:
         page = int(request.GET.get('page', '1'))
     except:
